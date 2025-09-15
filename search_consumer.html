@@ -46,7 +46,43 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-5 mx-auto">
-                <section class="input_main">
+                <div class="card">
+                    <div class="card-header">
+                        SEARCH CONSUMER
+                    </div>
+                    <div class="card-body">
+                        <div class="info-text">
+                            Enter your <span class="highlight">11-digit Consumer ID</span> to search for consumer
+                            information. Make
+                            sure the ID is accurate for successful validation.
+                        </div>
+                        <div class="input-container">
+                            <input type="text" class="input-field" id="consumerId" placeholder=" " autocomplete="off">
+                            <label for="consumerId" class="input-label">Consumer ID</label>
+
+                            <!-- Valid Icon -->
+                            <svg class="validation-icon valid" id="validIcon" viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                            </svg>
+
+                            <!-- Invalid Icon -->
+                            <svg class="validation-icon invalid" id="invalidIcon" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                            </svg>
+
+                            <div class="validation-message" id="validationMessage"></div>
+                        </div>
+
+                        <button class="proceed-btn">
+                            Proceed
+                            <svg class="arrow-icon" viewBox="0 0 24 24">
+                                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <!-- <section class="input_main">
                     <h1>Search Consumer</h1>
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="floatingInput" placeholder="Consumer Number">
@@ -55,7 +91,7 @@
                     <div class="CTA">
                         <button class="btn btn-warning">Proceed <i class="fa-solid fa-arrow-right"></i></button>
                     </div>
-                </section>
+                </section> -->
             </div>
         </div>
     </div>
@@ -63,7 +99,74 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        const inputField = document.getElementById('consumerId');
+        const inputLabel = inputField.nextElementSibling;
+        const validIcon = document.getElementById('validIcon');
+        const invalidIcon = document.getElementById('invalidIcon');
+        const validationMessage = document.getElementById('validationMessage');
 
+        function validateConsumerId(value) {
+            // Validate for 16 digits - matches the ID in your screenshot
+            return /^\d{11}$/.test(value);
+        }
+
+        function updateValidation() {
+            const value = inputField.value.trim();
+
+            // Reset states
+            inputField.classList.remove('valid', 'invalid');
+            validIcon.classList.remove('show');
+            invalidIcon.classList.remove('show');
+            validationMessage.classList.remove('valid', 'invalid');
+            validationMessage.textContent = '';
+
+            if (value === '') {
+                return;
+            }
+
+            if (validateConsumerId(value)) {
+                // Valid state
+                inputField.classList.add('valid');
+                validIcon.classList.add('show');
+                validationMessage.classList.add('valid');
+                validationMessage.textContent = 'Valid Consumer ID';
+            } else {
+                // Invalid state
+                inputField.classList.add('invalid');
+                invalidIcon.classList.add('show');
+                validationMessage.classList.add('invalid');
+                validationMessage.textContent = 'Invalid Consumer ID';
+            }
+        }
+
+        function updateLabel() {
+            if (inputField.value !== '' || inputField === document.activeElement) {
+                inputLabel.classList.add('active');
+            } else {
+                inputLabel.classList.remove('active');
+            }
+        }
+
+        // Event listeners
+        inputField.addEventListener('input', () => {
+            updateValidation();
+            updateLabel();
+        });
+
+        inputField.addEventListener('focus', () => {
+            updateLabel();
+        });
+
+        inputField.addEventListener('blur', () => {
+            updateLabel();
+        });
+
+
+
+        // Initialize label state
+        updateLabel();
+    </script>
 </body>
 
 </html>
