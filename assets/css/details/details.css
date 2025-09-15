@@ -1,0 +1,130 @@
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url("../../fonts/roboto/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto-Bold";
+  src: url("../../fonts/roboto/Roboto-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/*------------------- Fonts --------------------------*/
+/*------------------- Colors --------------------------*/
+/*------------------- Responsive --------------------------*/
+body {
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.737254902), rgba(226, 251, 241, 0.9921568627)), url("../../images/background.png") no-repeat center center/cover;
+  position: relative;
+  min-height: 100vh;
+  padding-top: 2px;
+}
+
+.consumer-card {
+  width: 75%;
+  max-width: 900px;
+}
+@media (max-width: 767px) {
+  .consumer-card {
+    width: 100%;
+  }
+}
+.consumer-card .welcome-section {
+  background: linear-gradient(50deg, #6943b4, #056f67);
+  padding: 10px;
+  border-radius: 5px;
+}
+.consumer-card .welcome-section .welcome-text {
+  color: #fff;
+}
+.consumer-card .welcome-section .welcome-text h2 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+.consumer-card .welcome-section .welcome-text p {
+  margin: 0PX;
+}
+.consumer-card .welcome-section .profile-icon i {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 17px;
+}
+
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.15);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+.details-card {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 5px;
+  margin-top: 2px;
+}
+.details-card .left i {
+  font-size: 15px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+.details-card .left .fa-user {
+  background: #cfdff3;
+  color: #2563EB;
+}
+.details-card .left .fa-house-user {
+  background: #FEE2E2;
+  color: #DD2A2A;
+}
+.details-card .left .fa-building {
+  background: #c7edd4;
+  color: #38B265;
+}
+.details-card .left .fa-mobile-screen-button {
+  background: #E0E7FF;
+  color: #4F46E5;
+}
+.details-card .left .fa-sitemap {
+  background: #F3E8FF;
+  color: #973BEB;
+}
+.details-card .left .fa-envelope {
+  background: #CCFBF1;
+  color: #0D9488;
+}
+.details-card .left .fa-location-dot {
+  background: #FFEDD5;
+  color: #EA580C;
+}
+.details-card .right dt {
+  font-weight: normal;
+  color: #545151;
+}
+.details-card .right dd {
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+.details-card .right .input-update {
+  display: flex;
+  margin-top: 5px;
+}
+.details-card .right .input-update input {
+  padding: 4px 12px;
+  font-size: 14px;
+  height: auto;
+  border-radius: 5px 0px 0px 5px;
+}
+.details-card .right .input-update button {
+  border-radius: 0px 5px 5px 0px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}/*# sourceMappingURL=details.css.map */

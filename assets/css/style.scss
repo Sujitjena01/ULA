@@ -1,0 +1,194 @@
+@import './variables/variables';
+
+body {
+    font-family: $roboto-regular;
+    font-size: 14px !important;
+    letter-spacing: 0.2px;
+}
+
+strong {
+    font-family: $roboto-bold;
+    font-weight: bold;
+}
+
+/* Generic focus style for all common interactive elements */
+a:focus,
+a:focus-visible,
+button:focus,
+button:focus-visible,
+input:focus,
+input:focus-visible,
+select:focus,
+select:focus-visible,
+textarea:focus,
+textarea:focus-visible,
+[tabindex]:focus,
+[tabindex]:focus-visible,
+summary:focus,
+summary:focus-visible,
+details:focus,
+details:focus-visible {
+    outline: 3px solid #1060AA !important;
+    outline-offset: 2px;
+    border-radius: 4px;
+    /* optional */
+}
+
+/* Override Bootstrap components that suppress outlines */
+.btn:focus,
+.btn:focus-visible,
+.accordion-button:focus,
+.accordion-button:focus-visible,
+.nav-link:focus,
+.nav-link:focus-visible,
+.dropdown-item:focus,
+.dropdown-item:focus-visible,
+.page-link:focus,
+.page-link:focus-visible,
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus,
+.form-range:focus,
+.list-group-item-action:focus,
+.list-group-item-action:focus-visible {
+    box-shadow: none !important;
+    /* disable Bootstrap glow */
+    outline: 3px solid #1060AA !important;
+    outline-offset: 2px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    border: 1.5px solid #1060AA !important;
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.17), 0 0 0 1000px #fff inset !important;
+    color: #1060AA !important;
+    font-weight: 700 !important;
+    -webkit-text-fill-color: #1060AA !important;
+    transition: background-color 99999s ease-in-out 0s;
+}
+
+.site-header {
+    background: linear-gradient(90deg, rgb(6 49 129 / 83%) 1.53%, rgb(7 103 65 / 91%) 98.61%);
+    color: white;
+    box-shadow: 0 4px 4px 0 rgba(33, 32, 32, 0.09);
+    border-radius: 10px;
+    border: 0.5px solid #67B2D7;
+    width: 98%;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin: auto;
+    top: 10px;
+
+    .logo {
+        img {
+            width: 130px;
+
+            @media #{$mobile_device} {
+                width: 80px;
+            }
+        }
+    }
+
+    .contact-container {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+
+        @media #{$mobile_device} {
+            gap: 8px;
+        }
+
+        .contact-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .icon {
+                background: #ffc107;
+                color: #000;
+                width: 32px;
+                height: 32px;
+                font-size: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 4px;
+
+                a {
+                    color: #000;
+                }
+            }
+
+            .details {
+                display: grid;
+
+                @media #{$mobile_device} {
+                    display: none;
+                }
+
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                    font-weight: 500;
+                    font-size: 13px;
+                    color: #ddd;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+
+        }
+    }
+}
+
+.main-site-header {
+    background: linear-gradient(90deg, rgb(194 208 234 / 9%) 1.53%, rgb(88 182 145 / 14%) 98.61%);
+    box-shadow: 0 4px 4px 0 rgba(33, 32, 32, 0.09);
+    border: 0.5px solid #4a8eaf;
+    position: relative;
+}
+
+.input_main {
+    background: #fff;
+    padding: 7px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 7px 0px #ccc;
+
+    h1 {
+        background: #3A7DDA;
+        text-transform: uppercase;
+        color: #fff;
+        font-size: 20px;
+        text-align: center;
+        padding: 18px;
+        border-radius: 5px;
+    }
+
+    .CTA {
+        width: 100%;
+        text-align: center;
+
+        margin-bottom: 15px;
+    }
+
+    .content {
+        padding: 10px 30px;
+        text-align: justify;
+
+        ol {
+            padding-left: 15px;
+
+            ol {
+                list-style: lower-alpha;
+            }
+        }
+    }
+}

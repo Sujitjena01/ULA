@@ -1,0 +1,146 @@
+@import '../variables/variables.scss';
+
+body {
+  background:
+    linear-gradient(to bottom right, #ffffffbc, #e2fbf1fd),
+    url("../../images/background.png") no-repeat center center / cover;
+  position: relative;
+  min-height: 100vh;
+  padding-top: 2px;
+}
+
+
+
+.consumer-card {
+  width: 75%;
+  max-width: 900px;
+
+  @media #{$mobile_device} {
+    width: 100%;
+  }
+
+  .welcome-section {
+    background: linear-gradient(50deg, #6943b4, #056f67);
+    padding: 10px;
+    border-radius: 5px;
+
+    .welcome-text {
+      color: #fff;
+
+      h2 {
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+
+      p {
+        margin: 0PX;
+      }
+    }
+
+    .profile-icon {
+      i {
+        width: 40px;
+        height: 40px;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 17px;
+      }
+    }
+  }
+
+}
+
+
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.details-card {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 5px;
+  margin-top: 2px;
+
+  .left {
+    i {
+      font-size: 15px;
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      display: grid;
+      align-content: center;
+      justify-content: center;
+    }
+
+    .fa-user {
+      background: #cfdff3;
+      color: #2563EB;
+
+    }
+
+    .fa-house-user {
+      background: #FEE2E2;
+      color: #DD2A2A;
+    }
+
+    .fa-building {
+      background: #c7edd4;
+      color: #38B265;
+    }
+
+    .fa-mobile-screen-button {
+      background: #E0E7FF;
+      color: #4F46E5;
+    }
+
+    .fa-sitemap {
+      background: #F3E8FF;
+      color: #973BEB;
+    }
+
+    .fa-envelope {
+      background: #CCFBF1;
+      color: #0D9488
+    }
+
+    .fa-location-dot {
+      background: #FFEDD5;
+      color: #EA580C;
+    }
+  }
+
+  .right {
+    dt {
+      font-weight: normal;
+      color: #545151;
+    }
+
+    dd {
+      font-weight: 600;
+      margin-bottom: 0px;
+    }
+
+    .input-update {
+      display: flex;
+      margin-top: 5px;
+
+      input {
+        padding: 4px 12px;
+        font-size: 14px;
+        height: auto;
+        border-radius: 5px 0px 0px 5px;
+      }
+
+      button {
+        border-radius: 0px 5px 5px 0px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+    }
+  }
+}
